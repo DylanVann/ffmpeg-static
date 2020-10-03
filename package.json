@@ -5,8 +5,7 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "install.js",
-    "example.js"
+    "install.js"
   ],
   "scripts": {
     "install": "node install.js",
