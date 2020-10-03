@@ -1,4 +1,7 @@
 #!/bin/bash
+
+PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
+
 set -e
 cd $(dirname $0)
 
