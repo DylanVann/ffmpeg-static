@@ -1,26 +1,30 @@
-const tape = require('tape')
+const test = require('tape')
 const { ok, strictEqual } = require('assert')
 const { isAbsolute } = require('path')
 const fs = require('fs')
 const { spawnSync } = require('child_process')
 const shell = require('any-shell-escape')
-const ffmpegPath = require('..')
+const { path: ffmpegPath } = require('..')
 
-tape('ffmpeg path is absolute', (t) => {
+test('ffmpeg path is absolute', (t) => {
   ok(isAbsolute(ffmpegPath))
+  t.end()
 })
 
-tape(`${ffmpegPath} is a file`, (t) => {
+test(`${ffmpegPath} is a file`, (t) => {
   ok(fs.statSync(ffmpegPath).isFile(ffmpegPath))
+  t.end()
 })
 
-tape(`${ffmpegPath} is executable`, (t) => {
+test(`${ffmpegPath} is executable`, (t) => {
   fs.accessSync(ffmpegPath, fs.constants.X_OK)
+  t.end()
 })
 
-tape(`\`${ffmpegPath} --help\` works`, (t) => {
+test(`\`${ffmpegPath} --help\` works`, (t) => {
   const { status } = spawnSync(ffmpegPath, ['--help'], {
     stdio: ['ignore', 'ignore', 'pipe'], // stdin, stdout, stderr
   })
   strictEqual(status, 0)
+  t.end()
 })

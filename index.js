@@ -22,7 +22,7 @@ var binPath = path.join(
   'bin',
   platform,
   arch,
-  platform === 'win32' ? 'ffprobe.exe' : 'ffprobe',
+  platform === 'win32' ? 'ffmpeg.exe' : 'ffmpeg',
 )
 
 exports.path = binPath
