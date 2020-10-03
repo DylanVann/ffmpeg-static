@@ -19,7 +19,10 @@ if (!binaries[platform] || binaries[platform].indexOf(arch) === -1) {
 
 var binPath = path.join(
   __dirname,
-  platform === 'win32' ? 'ffmpeg.exe' : 'ffmpeg',
+  'bin',
+  platform,
+  arch,
+  platform === 'win32' ? 'ffprobe.exe' : 'ffprobe',
 )
 
 exports.path = binPath

@@ -1,26 +1,7 @@
 {
-  "name": "ffmpeg-static",
-  "version": "4.2.7",
-  "description": "ffmpeg static binaries for Mac OSX and Linux and Windows",
-  "main": "index.js",
-  "files": [
-    "index.js",
-    "install.js"
-  ],
-  "scripts": {
-    "install": "node install.js",
-    "test": "node test.js",
-    "lint": "eslint .",
-    "prepublishOnly": "npm run lint && npm test"
-  },
-  "ffmpeg-static": {
-    "binary-release-tag": "b4.3.1",
-    "binary-release-name": "4.3.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/eugeneware/ffmpeg-static"
-  },
+  "name": "@dylanvann/ffmpeg-static",
+  "version": "0.0.1",
+  "description": "ffmpeg static binaries.",
   "keywords": [
     "ffmpeg",
     "static",
@@ -31,28 +12,33 @@
     "linux",
     "windows"
   ],
-  "authors": [
-    "Eugene Ware <eugene@noblesamurai.com>",
-    "contributors"
-  ],
-  "contributors": [
-    "Jannis R <mail@jannisr.de>"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dylanvann/ffmpeg-static.git"
+  },
   "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/eugeneware/ffmpeg-static/issues"
-  },
-  "engines": {
-    "node": ">=10"
-  },
-  "dependencies": {
-    "@derhuerst/http-basic": "^8.2.0",
-    "env-paths": "^2.2.0",
-    "https-proxy-agent": "^5.0.0",
-    "progress": "^2.0.3"
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "bin",
+    "index.js"
+  ],
+  "scripts": {
+    "test": "tape tests/*"
   },
   "devDependencies": {
+    "@derhuerst/http-basic": "^8.2.0",
     "any-shell-escape": "^0.1.1",
-    "eslint": "^7.2.0"
-  }
+    "env-paths": "^2.2.0",
+    "eslint": "^7.2.0",
+    "https-proxy-agent": "^5.0.0",
+    "progress": "^2.0.3",
+    "tape": "^4.0.1"
+  },
+  "authors": [
+    "Eugene Ware <eugene@noblesamurai.com>",
+    "joshwnj",
+    "Jannis R <mail@jannisr.de>",
+    "Dylan Vann <dylan@dylanvann.com>"
+  ]
 }
